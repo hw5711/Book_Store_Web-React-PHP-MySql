@@ -1,0 +1,9 @@
+.image {
+  background-image: url(../home.png);
+  height: 100%;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
