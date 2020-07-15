@@ -14,8 +14,7 @@ class App extends Component {
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/search">Search</Nav.Link>
-          <Nav.Link href="/cart">Cart</Nav.Link>
+          <Nav.Link style={{align:'right'}} href="/cart">Cart</Nav.Link>
         </Nav>
           {/* <div className="App-inline">
             <input onChange={this.handleAdd} type="text" id="text" placeholder="enter some text" />

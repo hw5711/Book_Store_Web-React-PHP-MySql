@@ -7,7 +7,7 @@ class Welcome extends Component {
         return (
             <div className="image">
                 <div className="container">
-                    <div className="row">
+                    <div>
                         <br /> <br />
                         <div>
                             <br /> <br />
@@ -16,8 +16,8 @@ class Welcome extends Component {
                             <h1>Welcome </h1>
                             <h3> to our book store </h3>
                             <br />
-                            <Button href="/signup" size="lg">
-                                SignUp
+                            <Button href="/search" size="lg">
+                                Search Books
               </Button>{" "}
                             <Button href="/login" variant="outline-primary" size="lg">
                                 Login

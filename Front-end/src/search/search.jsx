@@ -93,7 +93,6 @@ class Welcome extends Component {
                         <tbody>{this.renderTableData()}</tbody>
                     </table>
             </div>
-            
             </div>
         );
     }

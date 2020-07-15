@@ -1,5 +1,6 @@
 .image {
   background-image: url(../home.png);
+  margin-top: -3em;
   height: 100%;
   position: fixed;
   min-width: 100%;
