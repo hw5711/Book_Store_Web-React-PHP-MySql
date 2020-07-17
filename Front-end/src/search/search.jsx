@@ -16,7 +16,8 @@ class Welcome extends Component {
             redirect: false,
             searchSuccess: false,
             searchResult: [],
-            number:1
+            number:1,
+            amount: 0.0
         };
     }
     bookNumber = 0;
@@ -45,12 +46,15 @@ class Welcome extends Component {
     }
 
     addHandler(index) {
-    console.log("cart num is: ", this.state.number);
     let num = this.state.number;
     num++;
     this.setState({ number: num });
-    console.log("cart num is: ", this.state.number);
-    // console.log("index is: ", index);
+    console.log("cart total number is: ", this.state.number);
+    let amo = this.state.amount;
+    amo += this.state.searchResult[index].price;
+    console.log("cart total amount is: ", amo);
+    this.setState({ number: amo });
+
 }
 
     renderTableData() {
