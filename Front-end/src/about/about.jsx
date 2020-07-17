@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import "./footer.css";
 
-class Footer extends Component {
+class About extends Component {
     render() {
         return (
             <div>
-                <a href="/">Back to HOME</a>
+                <p>this is detial about the website</p>
             </div>
         );
     }
 }
-export default Footer;
+export default About;

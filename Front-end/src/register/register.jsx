@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import "./footer.css";
 
-class Footer extends Component {
+class Register extends Component {
     render() {
         return (
             <div>
-                <a href="/">Back to HOME</a>
+                <p>this is register</p>
             </div>
         );
     }
 }
-export default Footer;
+export default Register;

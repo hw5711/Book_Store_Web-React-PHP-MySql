@@ -5,6 +5,7 @@ import "./welcome.css";
 class Welcome extends Component {
     render() {
         return (
+            <div>
             <div className="image">
                 <div className="container">
                     <div>
@@ -16,8 +17,8 @@ class Welcome extends Component {
                             <h1>Welcome </h1>
                             <h3> to our book store </h3>
                             <br />
-                            <Button href="/search" size="lg">
-                                Search Books
+                            <Button href="/register" size="lg">
+                                Register
               </Button>{" "}
                             <Button href="/login" variant="outline-primary" size="lg">
                                 Login
@@ -25,6 +26,9 @@ class Welcome extends Component {
                         </div>
                     </div>
                 </div>
+               
+            </div>
+
             </div>
         );
     }

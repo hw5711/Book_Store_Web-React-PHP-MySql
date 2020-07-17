@@ -4,8 +4,10 @@ import "./search.css";
 import Axios from 'axios';
 import search from '../search.svg';
 import { Redirect } from "react-router-dom";
+import Bookrow from "./bookrow/bookrow";
 
 class Welcome extends Component {
+
     constructor(props){
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -13,7 +15,8 @@ class Welcome extends Component {
             book_name: "",
             redirect: false,
             searchSuccess: false,
-            searchResult: []
+            searchResult: [],
+            number:1
         };
     }
     bookNumber = 0;
@@ -41,33 +44,29 @@ class Welcome extends Component {
         
     }
 
+    addHandler(index) {
+    console.log("cart num is: ", this.state.number);
+    let num = this.state.number;
+    num++;
+    this.setState({ number: num });
+    console.log("cart num is: ", this.state.number);
+    // console.log("index is: ", index);
+}
+
     renderTableData() {
-        if (!this.state.searchResult) {
-            return;
-        }
-        return this.state.searchResult.map((row, index) => {
-            console.log("in! ", this.state.searchResult);
-            const {
-                ISBN,
-                bookname,
-                author
-            } = row;
-            return (
-                <tr key={this.state.book_name}>
-                    <td>{ISBN}</td>
-                    <td>{bookname}</td>
-                    <td>{author}</td>
-                    <td>
-                        <button
-                            // onClick={() => this.register(eventId)}
-                            // className="btn btn-primary"
-                        >
-                            Add to Cart
-            </button>
-                    </td>
-                </tr>
-            );
-        });
+        return this.state.searchResult.map((bookObj,index) => (
+            <tr key={bookObj.ISBN}>
+                <td>{index+1}</td>
+                <td>{bookObj.ISBN}</td>
+                <td>{bookObj.bookname}</td>
+                <td>{bookObj.author}</td>
+                <td>{bookObj.price}</td>
+            <td><Bookrow
+                key={index+1} 
+                added={() => this.addHandler(index)}
+                /></td>
+            </tr>
+        ));
     }
 
     render() {
@@ -75,19 +74,20 @@ class Welcome extends Component {
             this.bookNumber++;
             console.log(this.bookNumber);
             return <Redirect to="/cart" />
-
         }
         return (
             <div className="App-inline" style={{ margin: '1em'}}>
                 <input onChange={this.handleAdd} type="text" id="text" placeholder="enter some text" />
                 <button onClick={this.handleSubmit} id="submit" ><img src={search} alt="logo" />search</button>
-            <div>
+                <div style={{ margin: '2em', width: '70%'}}>
                     <table className="table table-striped" style={{ marginTop: 20 }}>
                         <thead>
                             <tr>
+                                <th>No.</th>
                                 <th>ISBN</th>
                                 <th>Book Name</th>
                                 <th>Author</th>
+                                <th>Price</th>
                             </tr>
                         </thead>
                         <tbody>{this.renderTableData()}</tbody>
