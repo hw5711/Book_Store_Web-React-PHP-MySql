@@ -4,8 +4,8 @@ import "./footer.css";
 class Footer extends Component {
     render() {
         return (
-            <div>
-                <a href="/">Back to HOME</a>
+            <div style={{marginLeft:'2em'}}>
+                {/* <a href="/">Back to HOME</a> */}
             </div>
         );
     }

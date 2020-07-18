@@ -6,7 +6,7 @@ import search from '../search.svg';
 import { Redirect } from "react-router-dom";
 import Bookrow from "./bookrow/bookrow";
 
-class Welcome extends Component {
+class Search extends Component {
 
     constructor(props){
         super(props);
@@ -17,10 +17,11 @@ class Welcome extends Component {
             searchSuccess: false,
             searchResult: [],
             number:1,
-            amount: 0.0
+            amount: 0.0,
         };
     }
     bookNumber = 0;
+    userId = '10001';
 
     handleAdd = async e => {
         await this.setState({
@@ -46,14 +47,17 @@ class Welcome extends Component {
     }
 
     addHandler(index) {
-    let num = this.state.number;
-    num++;
-    this.setState({ number: num });
-    console.log("cart total number is: ", this.state.number);
-    let amo = this.state.amount;
-    amo += this.state.searchResult[index].price;
-    console.log("cart total amount is: ", amo);
-    this.setState({ number: amo });
+        // let obj = { booklist: this.booklist, bookquantity: this.bookquantity };
+        // Axios
+        //     .post(
+        //         "http://localhost:8080/react-backend/cart.php?userId=" +
+        //         index,
+        //         obj
+        //     )
+        //     .then((res) => {
+        //         this.setState({ redirect: true });
+        //     })
+        //     .catch((err) => console.log(err));
 
 }
 
@@ -101,4 +105,4 @@ class Welcome extends Component {
         );
     }
 }
-export default Welcome;
+export default Search;
