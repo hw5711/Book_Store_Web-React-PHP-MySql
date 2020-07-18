@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import {  Navbar, Nav } from 'react-bootstrap';
-// import Routes from "./routes";
 import Footer from "./footer/footer";
 import Aux from "./hoc/Aux";
 import Layout from "./Layout/Layout";
-// import BookOrderBuilder from "./bookorderbuilder/bookorderbuilder";
+// import { useSelector } from 'react-redux';
+
+// const counter = useSelector(state => state.totalNum);
 
 class App extends Component {
+
   render() {
     return (
     <Aux>
@@ -17,9 +19,10 @@ class App extends Component {
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
           <Nav.Link href="/search">Search</Nav.Link>
-          <Nav.Link href="/cart">Cart</Nav.Link>
+          <Nav.Link href="/cart">Cart</Nav.Link> 
         </Nav>
       </Navbar>
+        {/* {counter} */}
       <Layout />
       <Footer />
       </Aux>

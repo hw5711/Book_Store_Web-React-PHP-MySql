@@ -5,6 +5,8 @@ import Axios from 'axios';
 import search from '../search.svg';
 import { Redirect } from "react-router-dom";
 import Bookrow from "./bookrow/bookrow";
+// import { useSelector, useDispatch } from 'react-redux';
+// import { addtocart } from '../redux/action';
 
 class Search extends Component {
 
@@ -47,18 +49,7 @@ class Search extends Component {
     }
 
     addHandler(index) {
-        // let obj = { booklist: this.booklist, bookquantity: this.bookquantity };
-        // Axios
-        //     .post(
-        //         "http://localhost:8080/react-backend/cart.php?userId=" +
-        //         index,
-        //         obj
-        //     )
-        //     .then((res) => {
-        //         this.setState({ redirect: true });
-        //     })
-        //     .catch((err) => console.log(err));
-
+        console.log("book index is ", index);
 }
 
     renderTableData() {
